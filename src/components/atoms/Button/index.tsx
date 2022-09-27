@@ -10,7 +10,7 @@ interface Props extends CommonProps {
   children: React.ReactNode
 }
 const Button = ({href='', className = '', style, target, children, query}:Props) => {
-  const btnClass = `inline-block relative bg-base-color-dark text-base-cont py-4 pl-8 pr-16 ${className}`;
+  const btnClass = `inline-block relative bg-base-color-dark text-base-cont py-4 px-8 ${className}`;
   return (
     <>
       {!href && <button className={btnClass} style={style}>{children}</button>}

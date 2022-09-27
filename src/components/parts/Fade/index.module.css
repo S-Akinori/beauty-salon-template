@@ -1,0 +1,19 @@
+.fade {
+  opacity: 0;
+  transition: 500ms;
+}
+
+.fade.bottom {
+  transform: translate(0, 60px);
+}
+.fade.top {
+  transform: translate(0, -60px);
+}
+
+.fade.show {
+  opacity: 1;
+}
+.fade.show.bottom,
+.fade.show.top {
+  transform: translate(0, 0);
+}

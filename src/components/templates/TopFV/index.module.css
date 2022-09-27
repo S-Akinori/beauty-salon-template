@@ -1,0 +1,62 @@
+.fv {
+  position: relative;
+  margin-left: 3rem;
+  height: 80vh;
+  transition: all 300ms;
+}
+.fv.active {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 0;
+  z-index: 100;
+  width: 100%;
+  height: 100%;
+}
+.fv.move {
+  animation: move 1.5s ease both;
+}
+
+@keyframes move {
+  0% {
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin-left: 0;
+    z-index: 100;
+    width: 100%;
+    height: 100%;
+  }
+  100% {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    height: 80vh;
+    width: calc(100% - 3rem);
+  }
+}
+
+.bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 90;
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  background: #fff;
+  transition: 500ms;
+}
+.bg.fadeOut {
+  opacity: 0;
+}
+
+.fvImage {
+  position: absolute;
+  opacity: 0;
+  transition: 400ms;
+}
+.fvImage.active {
+  opacity: 1;
+}

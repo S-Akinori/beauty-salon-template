@@ -9,13 +9,19 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "next": "12.1.6",
+    "nodemailer": "^6.7.8",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-datepicker": "^4.8.0",
+    "react-dom": "18.2.0",
+    "react-hook-form": "^7.36.1",
+    "react-intersection-observer": "^9.4.0"
   },
   "devDependencies": {
     "@types/node": "18.0.0",
     "@types/react": "18.0.14",
+    "@types/react-datepicker": "^4.4.2",
     "@types/react-dom": "18.0.5",
     "autoprefixer": "^10.4.7",
     "eslint": "8.17.0",

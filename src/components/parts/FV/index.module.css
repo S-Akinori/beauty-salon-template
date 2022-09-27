@@ -1,0 +1,7 @@
+.fvImage {
+  opacity: 0;
+}
+
+.fvImage.active {
+  opacity: 1;
+}

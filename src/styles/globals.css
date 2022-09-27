@@ -26,9 +26,9 @@ body {
   max-width: 100%;
   font-family: "Source Han Serif", "Hiragino Kaku Gothic ProN", "Yu Gothic", "Arial", "Meiryo", sans-serif;
 }
-main {
+/* main {
   padding-bottom: 3rem;
-}
+} */
 video {
   width: 100%;
 }
@@ -76,11 +76,14 @@ button:disabled:hover {
   color: #FFF;
 }
 
-ul li, .list .list-item {
+ul li {
+  padding-bottom: 0.5rem;
+}
+.list .list-item {
   padding: 0.5rem 0 0.5rem 1rem;
   position: relative;
 }
-ul li::before, .list .list-item::before {
+.list .list-item::before {
   content: '';
   display: block;
   position: absolute;
@@ -111,6 +114,11 @@ label {
 
 iframe {
   max-width: 100%;
+}
+
+th {
+  font-weight: normal;
+  text-align: left;
 }
 
 .text {
@@ -163,6 +171,19 @@ iframe {
 .bg-rect--left.active::before {
   animation: growLeft 600ms cubic-bezier(.29,.7,.52,.99) both;
 }
+
+.beforeObject {
+  position: relative;
+}
+.beforeObject::before {
+  content: '';
+  display: block;
+  position: absolute;
+}
+.white-filter {
+  background: rgba(255, 255, 255, 0.5);
+}
+
 @media screen and (max-width: 768px) {
   html, body {
     font-size: 14px;
@@ -184,6 +205,12 @@ iframe {
   }
   .d-sp {
     display: block;
+  }
+}
+@media screen and (min-width: 768px) {
+  /*** flex ***/
+  .md\:col-2 {
+    width: calc(50% - 2rem);
   }
 }
 
