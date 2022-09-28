@@ -1,5 +1,6 @@
 import Head from "next/head"
 import React from "react"
+import { useInView } from "react-intersection-observer"
 import Footer from "../../parts/Footer"
 import Header from "../../parts/Header"
 
@@ -20,6 +21,7 @@ const Layout = ({
     h1,
     children
   }: Props) => {
+    const {ref, inView, entry} = useInView();
   return (
     <div style={{overflowX: 'hidden'}}>
       <Head>
@@ -37,9 +39,10 @@ const Layout = ({
         <meta property="og:site_name" content={pageTitle} />
         <meta property="og:locale" content="ja_JP"  />
       </Head>
-      <Header />
+      <Header isBackground={!inView && entry !== undefined} />
       <main>
-        {h1 && <h1>{h1}</h1>}
+        <div ref={ref} className="headerTrigger absolute" style={{top: '400px'}}></div>
+        {h1 && <h1 className="hidden">{h1}</h1>}
         <div>
           {children}
         </div>

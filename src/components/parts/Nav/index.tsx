@@ -1,7 +1,7 @@
 import Link from "next/link"
-import { CommonProps } from "src/types/CommonProps"
+import { CommonProps, StyleProps } from "src/types/CommonProps"
 
-interface Props extends CommonProps {
+interface Props extends StyleProps {
   nav: {
     id: string
     href: string

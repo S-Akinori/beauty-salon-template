@@ -2,11 +2,11 @@ import Image from "next/image"
 import Link from "next/link"
 import { useEffect, useRef, useState } from "react"
 import { media } from "src/contents/common"
-import { CommonProps } from "src/types/CommonProps"
+import { CommonProps, StyleProps } from "src/types/CommonProps"
 import Button from "src/components/atoms/Button"
 import CloseIcon from "src/components/atoms/Icons/Close"
 
-interface Props extends CommonProps {
+interface Props extends StyleProps {
   nav: {
     id: string
     href: string

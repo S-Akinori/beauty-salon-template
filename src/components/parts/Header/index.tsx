@@ -5,11 +5,17 @@ import MenuIcon from 'src/components/atoms/Icons/Menu';
 import Nav from 'src/components/parts/Nav';
 import NavSP from 'src/components/parts/Nav/NavSP';
 import { gnav } from 'src/contents/nav';
+import clsx from 'clsx';
+import { InView } from 'react-intersection-observer';
 
-const Header = () => {
+interface Props {
+  isBackground: boolean
+}
+
+const Header = ({isBackground = false}: Props) => {
   const [open, setOpen] = useState<boolean | undefined>(undefined)
   return (
-    <header className="flex items-center fixed top-0 z-40 px-4 w-full h-16">
+    <header className={ clsx(["flex items-center fixed top-0 z-40 px-4 w-full h-16 duration-300", isBackground ? 'bg-main' : 'bg-none'])}>
       <div className='flex justify-between items-center w-full'>
         <div><Link href='/'>RING RING</Link></div>
         <Nav className='hidden lg:block' nav={gnav} />

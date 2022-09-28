@@ -40,16 +40,19 @@ const TopFV = () => {
       }, 500)
     } else {
       setTimeout(() => {
-        setFvState('static')
+        setFvState('fadeOut')
         setDelay(3000)
       }, 800)
+      setTimeout(() => {
+        setFvState('static')
+      }, 1000)
     }
   }, [])
 
   return (
     <>
       {fvState !== 'static' && fvState !== 'fadeOut' && (
-        <div style={{height: '70vh', width: '100%'}}></div>
+        <div style={{height: '80vh', width: '100%'}}></div>
       )}
       {fvState !== 'static' && (
         <div className={clsx([styles.bg, fvState === 'fadeOut' ? styles.fadeOut : false])}></div>
@@ -59,7 +62,7 @@ const TopFV = () => {
           Ring Ring
         </div>
       )}
-      <div className={`${styles.fv} ${fvState === 'loading' || fvState === 'active' ? styles.active : ''} ${fvState === 'moving' ? styles.move : ''}`}>
+      <div className={`${styles.fv} ${fvState === 'active' ? styles.active : ''} ${fvState === 'moving' ? styles.move : ''}`}>
         <div className='h-full'>
           {heroImages && heroImages.map((image, index) => (
             <div key={image.id} className={`w-full h-full ${styles.fvImage} ${(index === activeIndex) ? styles.active : ''}`}>
