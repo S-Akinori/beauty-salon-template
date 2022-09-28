@@ -10,7 +10,12 @@ const ImageBox = ({image, children}: Props) => {
   return (
     <div className="relative">
       <div style={{fontSize: 0}}>
-        <Image {...image}/>
+        <Image
+          src={image.src}
+          width={image.width}
+          height={image.height}
+          objectFit={image.objectFit}
+        />
       </div>
       <div 
         className="absolute top-0 left-0 z-10 p-4 w-full h-full opacity-0 duration-300 select-none

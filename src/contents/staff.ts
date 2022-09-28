@@ -1,4 +1,6 @@
-export const staffs = [
+import { ImageObject } from "src/types/CommonProps"
+
+export const staffs: Staff[] = [
   {
     id: 'staff1',
     title: 'スタッフ1',
@@ -90,3 +92,17 @@ export const staffs = [
     ]
   },
 ]
+
+export interface Staff {
+  id: string
+  title: string
+  role: string
+  experience: string
+  text: string
+  image: ImageObject
+  infoItems: {
+    id: string
+    title: string
+    text: string
+  }[]
+}
