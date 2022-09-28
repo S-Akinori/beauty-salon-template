@@ -66,7 +66,7 @@ const Carousel = ({slidesPerView = 1, children}: Props) => {
   const handleUp: MouseEventHandler<HTMLDivElement> & React.TouchEventHandler<HTMLDivElement> = (e) => {
     if(startX && ref.current) {
       const triggerDis = 70;
-      const dis = e.clientX - startX
+      const dis = (e.type === 'mousemove') ? (e as MouseEvent).clientX - startX : (e as TouchEvent).changedTouches[0].clientX - startX
       const direction = - Math.sign(dis); // -1 -> to left, 1 -> to right      
       if(
         Math.abs(dis) < triggerDis ||
