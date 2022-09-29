@@ -4,16 +4,16 @@ import Fade from "src/components/parts/Fade"
 import FV from "src/components/parts/FV"
 import TitleText from "src/components/parts/TItleText"
 import Layout from "src/components/templates/Layout"
-import { galleryItems } from "src/contents/gallery"
+import { gallertText, galleryFV, galleryItems } from "src/contents/gallery"
 
 const GalleryPage = () => {
   return (
     <Layout>
-      <FV src="/images/hero1.jpg" title="Gallery" />
+      <FV src={galleryFV.image.src} title={galleryFV.title} />
       <Container className="py-20">
         <Fade direction="bottom">
-          <TitleText title="なりたい自分を見つける">
-            経験豊富で個性あふれるスタイリストが揃っています。得意な技術を活かした施術でお客様の「なりたい」を実現します。
+          <TitleText title={gallertText.title}>
+            {gallertText.text}
           </TitleText>
         </Fade>
       </Container>

@@ -1,8 +1,11 @@
+import clsx from "clsx"
 import Image from "next/image"
 import React, { Children, cloneElement, createElement, MouseEvent, MouseEventHandler, TouchEvent, useEffect, useRef, useState } from "react"
+import useInterval from "src/hooks/useInterval"
 import useMediaQuery from "src/hooks/useMediaQuery"
 import { ImageObject } from "src/types/CommonProps"
 import { breakpoints } from "src/variables/breakpoints"
+import css from 'styled-jsx/css'
 
 interface BreakPoint {
   md?: number
@@ -13,10 +16,11 @@ interface BreakPoint {
 interface Props {
   children: React.ReactElement[]
   slidesPerView?: number | BreakPoint
-  
+  autoPlay?: boolean
+  navigation?: boolean
 }
 
-const Carousel = ({slidesPerView = 1, children}: Props) => {
+const Carousel = ({slidesPerView = 1, autoPlay = false, navigation = true, children}: Props) => {
   const [activeIndex, setActiveIndex] = useState(0);
   const {breakPoint} = useMediaQuery();
   const [startX, setStartX] = useState<number | null>(null);
@@ -24,6 +28,12 @@ const Carousel = ({slidesPerView = 1, children}: Props) => {
   const [slideNum, setSlideNum] = useState(1);
   const ref = useRef<HTMLDivElement>(null)
   const speed = 5 * slideNum
+
+  if(autoPlay) {
+    useInterval(() => {
+      setActiveIndex(activeIndex === children.length - 1 ? 0 : activeIndex + 1);
+    }, 3000)
+  }
 
   useEffect(() => {
     //comment: no better way?
@@ -45,6 +55,12 @@ const Carousel = ({slidesPerView = 1, children}: Props) => {
       setSlideNum(slidesPerView)
     }
   }, [breakPoint])
+
+  useEffect(() => {
+    if(ref.current) {
+      ref.current.style.transform = `translateX(${-itemWidth * activeIndex}%)`
+    }
+  }, [activeIndex])
 
   const handleDown: MouseEventHandler<HTMLDivElement> & React.TouchEventHandler<HTMLDivElement> = (e) => {
     if(e.type === 'mousedown') {
@@ -84,27 +100,64 @@ const Carousel = ({slidesPerView = 1, children}: Props) => {
     setStartX(null)
   }
 
+  const slide = (slideTo: number) => {
+    if(slideTo >= 0 && slideTo < children.length) setActiveIndex(slideTo)
+  }
+
   return (
-      <div className={`overflow-hidden ${startX === null ? 'cursor-grab' : 'cursor-grabbing'}`}
-        onTouchStart={handleDown} 
-        onMouseDown={handleDown} 
-        onMouseMove={handleMove} 
-        onTouchMove={handleMove} 
-        onMouseUp={handleUp} 
-        onTouchEnd={handleUp}
-        // onMouseOut={handleUp}
-      >
-      <div className={`flex ${startX === null ? 'duration-300' : ''}`} ref={ref}>
-        {Children.map(children, (child, index) => {
-          return cloneElement(child,{
-            className: activeIndex === index ? 'active' : '',
-            style: {width: `calc(${itemWidth}%)`},
-          })
-        })}
+    <>
+      <style jsx>{btnStyle}</style>
+      <div className="relative">
+        <div className={clsx(['overflow-hidden', startX === null ? 'cursor-grab' : 'cursor-grabbing'])}
+          // onTouchStart={handleDown} 
+          onMouseDown={handleDown} 
+          onMouseMove={handleMove} 
+          // onTouchMove={handleMove} 
+          onMouseUp={handleUp} 
+          // onTouchEnd={handleUp}
+          // onMouseOut={handleUp}
+        >
+          <div className={`flex ${startX === null ? 'duration-300' : ''}`} ref={ref}>
+            {Children.map(children, (child, index) => {
+              return cloneElement(child,{
+                className: activeIndex === index ? 'active' : '',
+                style: {width: `calc(${itemWidth}%)`},
+              })
+            })}
+          </div>
+        </div>
+        {navigation && (
+          <>
+            <div className="btn left-0 after:left-0" onClick={(e) => slide(activeIndex - 1)}>prev</div>
+            <div className="btn right-0 after:right-0" onClick={(e) => slide(activeIndex + 1)}>next</div>
+          </>
+        )}
       </div>
-    </div>
+    </>
   )
 }
+
+const btnStyle = css`
+  .btn {
+    position: absolute;
+    bottom: -2rem;
+    padding-bottom: .25rem;
+    cursor: pointer;
+  }
+  .btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 125%;
+    height: 1px;
+    background: #222;
+    transition: 300ms;
+  }
+  .btn:hover::after {
+    width: 150%;
+  }
+`
 
 interface ItemProps {
   children: React.ReactNode

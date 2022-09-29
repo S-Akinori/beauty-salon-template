@@ -5,20 +5,20 @@ import FV from "src/components/parts/FV"
 import Table, { TableCell, TableRow } from "src/components/parts/Table"
 import TitleText from "src/components/parts/TItleText"
 import Layout from "src/components/templates/Layout"
-import { staffs } from "src/contents/staff"
+import { staffFV, staffs, staffText } from "src/contents/staff"
 
 const StaffPage = () => {
   return (
     <Layout>
-      <FV src="/images/hero1.jpg" title="STAFF" />
+      <FV src={staffFV.image.src} title={staffFV.title} />
       <Container className="py-20">
         <Fade direction="bottom">
-          <TitleText title="スタイリスト紹介">
-            経験豊富で個性あふれるスタイリストが揃っています。得意な技術を活かした施術でお客様の「なりたい」を実現します。
+          <TitleText title={staffText.title}>
+            {staffText.text}
           </TitleText>
         </Fade>
       </Container>
-      <div className="bg-main py-20">
+      <div className="bg-main py-20 mb-20">
         <Container>
           {staffs.map(staff => (
             <div key={staff.id} className="md:flex items-stretch mb-20">

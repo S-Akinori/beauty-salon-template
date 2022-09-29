@@ -5,7 +5,7 @@ interface Props {
   title: string
 }
 
-const TopTitleText = ({title, children}: Props) => {
+const TitleText = ({title, children}: Props) => {
   return (
     <div>
       <style jsx>{titleStyle}</style>
@@ -30,4 +30,4 @@ const titleStyle = css`
     transform: rotate(90deg)
 }`
 
-export default TopTitleText
+export default TitleText

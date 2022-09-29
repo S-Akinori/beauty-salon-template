@@ -19,9 +19,4 @@ export const gnav = [
     href: '/staff',
     linkText: 'STAFF',
   },
-  {
-    id: 'nav5',
-    href: '/news',
-    linkText: 'NEWS',
-  },
 ]

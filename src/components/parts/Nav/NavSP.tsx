@@ -41,8 +41,7 @@ const NavSP = ({nav, open, setOpen, className = '', style}: Props) => {
             ))}
           </ul>
         </nav>
-        <div className='pr-2 mb-4 text-center'><Button href="/contact">お問い合わせ</Button></div>
-        <div className='pr-2 mb-4 text-center'><Button href="/contact/order">お申込み</Button></div>
+        <div className='pr-2 mb-4 text-center'><Button href="/contact">Contact</Button></div>
         <div className="flex justify-center mb-4">
           {media && media.map(item => (
             <div key={item.id} className="pr-4"><a href={item.href} target="_blank" rel="noreferrer">

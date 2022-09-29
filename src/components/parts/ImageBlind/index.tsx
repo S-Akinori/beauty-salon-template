@@ -7,10 +7,11 @@ interface Props {
   src: string
   width: number
   height: number
-
+  layout?: "fixed" | "fill" | "intrinsic" | "responsive" | "raw"
+  objectFit?: 'cover' | 'contain'
 }
 
-const ImageBlind = ({src, width, height}: Props) => {
+const ImageBlind = ({src, width, height, layout, objectFit}: Props) => {
   const {ref, inView} = useInView({
     rootMargin: '-100px',
     triggerOnce: true
@@ -33,6 +34,8 @@ const ImageBlind = ({src, width, height}: Props) => {
           src={src}
           width={width}
           height={height}
+          layout={layout}
+          objectFit={objectFit}
         />
       </div>
     </div>

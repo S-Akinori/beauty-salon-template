@@ -59,7 +59,7 @@ const TopFV = () => {
       )}
       {(fvState === 'loading' || fvState === 'active') && (
         <div className={clsx(['fixed top-0 left-0 flex items-center justify-center w-full h-full duration-300', fvState === 'loading' ? 'bg-main' : 'bg-none'])} style={{zIndex: '9999'}}>
-          Ring Ring
+          <span className="text-xl">Beauty Salon</span>
         </div>
       )}
       <div className={`${styles.fv} ${fvState === 'active' ? styles.active : ''} ${fvState === 'moving' ? styles.move : ''}`}>

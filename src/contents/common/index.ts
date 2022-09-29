@@ -8,8 +8,11 @@ export const media = [
 ]
 
 export const company = {
-  name: '株式会社imp',
-  address: '〒166-0012 東京都杉並区和田2-33-5'
+  name: 'Beauty Salon',
+  address: '〒000-0000 東京都新宿区0-0-00',
+  tel: '1234-56-789',
+  email: 'contact@example.com',
+  url: 'https://example.com'
 }
 
 export const commonContact = {

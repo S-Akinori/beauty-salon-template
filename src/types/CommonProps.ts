@@ -21,3 +21,9 @@ export interface ImageObject {
   height: number
   objectFit?: 'cover' | 'contain'
 }
+
+export interface CommonLink {
+  href: string
+  text: string
+  target?: '_blank'
+}

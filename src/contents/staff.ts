@@ -1,5 +1,27 @@
 import { ImageObject } from "src/types/CommonProps"
 
+export const topStaff = {
+  titleEn: 'Staff',
+  titleJa: 'スタッフ',
+  text: '一級の技術を持ったBeauty Salonのスタッフです。カットの技術はもちろん、髪質や頭皮のこと、お客様の健康面も考慮したスペシャリストです。どんなカットでもケアでも、ご相談に乗りますのでお気軽にどうぞ。',
+  href: '/staff',
+  linkText: 'スタッフへ'
+}
+
+export const staffFV = {
+  title: 'Staff',
+  image: {
+    src: '/images/hero_staff.jpg',
+    width: 1920,
+    height: 1080
+  }
+}
+
+export const staffText = {
+  title: '確かな技術力と豊かな個性をもつスタイリストを紹介',
+  text: "経験豊富で個性あふれるスタイリストが揃っています。得意な技術を活かした施術でお客様の「なりたい」を実現します。",
+}
+
 export const staffs: Staff[] = [
   {
     id: 'staff1',
@@ -8,7 +30,7 @@ export const staffs: Staff[] = [
     experience: 'スタイリスト歴15年',
     text: 'お客様の悩みとしっかり向き合い、あなたに似合う最高の"美"を提案します！安心して、お任せください。素敵なデザインを一緒につくりましょう。',
     image: {
-      src: '/images/hero1.jpg',
+      src: '/images/image_staff1.jpg',
       width: 1080,
       height: 1080,
       objectFit: 'cover'
@@ -38,7 +60,7 @@ export const staffs: Staff[] = [
     experience: 'スタイリスト歴15年',
     text: 'お客様の悩みとしっかり向き合い、あなたに似合う最高の"美"を提案します！安心して、お任せください。素敵なデザインを一緒につくりましょう。',
     image: {
-      src: '/images/hero2.jpg',
+      src: '/images/image_staff2.jpg',
       width: 1080,
       height: 1080,
       objectFit: 'cover'
@@ -68,7 +90,7 @@ export const staffs: Staff[] = [
     experience: 'スタイリスト歴15年',
     text: 'お客様の悩みとしっかり向き合い、あなたに似合う最高の"美"を提案します！安心して、お任せください。素敵なデザインを一緒につくりましょう。',
     image: {
-      src: '/images/hero3.jpg',
+      src: '/images/image_staff3.jpg',
       width: 1080,
       height: 1080,
       objectFit: 'cover'

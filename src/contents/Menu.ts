@@ -1,8 +1,35 @@
+export const topMenu = {
+  titleEn: 'Menu',
+  titleJa: 'メニュー',
+  text: 'カットはもちろん、シャンプーやカラー、パーマ全てに気を配っています。髪のこと、頭皮のことを考慮し、厳選したオーガニックな薬剤を揃えています。髪や頭皮でお悩みのお客様に合わせた最適な施術を行います。',
+  href: '/menu',
+  linkText: 'メニューへ'
+}
+
+export const menuFV = {
+  title: 'Menu',
+  image: {
+    src: '/images/hero_menu.jpg',
+    width: 1920,
+    height: 1080
+  }
+}
+
+export const menuText = {
+  title: '様々なメニューをご提供',
+  text: "カットはもちろん、シャンプーやカラー、パーマ全てに気を配っています。髪のこと、頭皮のことを考慮し、厳選したオーガニックな薬剤を揃えています。髪や頭皮でお悩みのお客様に合わせた最適な施術を行います。",
+}
+
+export const menuContactLink = {
+  href: '/contact',
+  linkText: 'ご予約はこちら'
+}
+
 export const cutMenu = {
   id: 'cut',
   title: 'CUT',
   image: {
-    src: '/images/image_concept.jpg',
+    src: '/images/image_menu_cut.jpg',
     width: 1280,
     height: 835
   },
@@ -31,7 +58,7 @@ export const permMenu = {
   id: 'perm',
   title: 'PERM',
   image: {
-    src: '/images/image_concept.jpg',
+    src: '/images/image_menu_perm.jpg',
     width: 1280,
     height: 835
   },

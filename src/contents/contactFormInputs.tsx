@@ -1,10 +1,9 @@
 export interface ContactInputs {
-  type: string
   name: string
   kana: string
   email: string
   date: string
-  body: string
+  content: string
 }
 export interface ContactFormInputs {
   id: string
@@ -50,8 +49,8 @@ export const contacFormInputs: ContactFormInputs[] = [
     label: '予約日時',
   },
   {
-    id: 'body',
-    name: 'body',
+    id: 'content',
+    name: 'content',
     type: 'textarea',
     label: 'ご質問・ご要望',
   },
