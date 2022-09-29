@@ -107,12 +107,12 @@ const Carousel = ({slidesPerView = 1, autoPlay = false, navigation = true, child
       <style jsx>{btnStyle}</style>
       <div className="relative">
         <div className={clsx(['overflow-hidden', startX === null ? 'cursor-grab' : 'cursor-grabbing'])}
-          // onTouchStart={handleDown} 
+          onTouchStart={handleDown} 
           onMouseDown={handleDown} 
           onMouseMove={handleMove} 
-          // onTouchMove={handleMove} 
+          onTouchMove={handleMove} 
           onMouseUp={handleUp} 
-          // onTouchEnd={handleUp}
+          onTouchEnd={handleUp}
           // onMouseOut={handleUp}
         >
           <div className={`flex ${startX === null ? 'duration-300' : ''}`} ref={ref}>
