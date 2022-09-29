@@ -27,11 +27,11 @@ const Carousel = ({slidesPerView = 1, autoPlay = false, navigation = true, child
   const ref = useRef<HTMLDivElement>(null)
   const speed = 5 * slideNum
 
-  if(autoPlay) {
-    useInterval(() => {
+  useInterval(() => {
+    if(autoPlay) {
       setActiveIndex(activeIndex === children.length - 1 ? 0 : activeIndex + 1);
-    }, 3000)
-  }
+    }
+  }, 3000)
 
   useEffect(() => {
     //comment: no better way?
