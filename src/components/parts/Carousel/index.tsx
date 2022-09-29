@@ -1,9 +1,7 @@
 import clsx from "clsx"
-import Image from "next/image"
 import React, { Children, cloneElement, createElement, MouseEvent, MouseEventHandler, TouchEvent, useEffect, useRef, useState } from "react"
 import useInterval from "src/hooks/useInterval"
 import useMediaQuery from "src/hooks/useMediaQuery"
-import { ImageObject } from "src/types/CommonProps"
 import { breakpoints } from "src/variables/breakpoints"
 import css from 'styled-jsx/css'
 
