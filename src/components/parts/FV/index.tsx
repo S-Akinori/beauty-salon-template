@@ -9,12 +9,13 @@ interface Props {
 
 const FV = ({src, title}: Props) => {
   return (
-    <div className='relative'>
+    <div className='relative w-full' style={{height: '80vh'}}>
       <div style={{fontSize: 0}}>
         <Image
           src={src}
           width={1920}
           height={1080}
+          layout="fill"
           objectFit="cover"
         />
       </div>
