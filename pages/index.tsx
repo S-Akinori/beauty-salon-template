@@ -17,7 +17,7 @@ import { staffs, topStaff } from 'src/contents/staff'
 import { topConcepts } from 'src/contents/concept'
 import clsx from 'clsx'
 import { topGallery } from 'src/contents/gallery'
-import { menus, topMenu } from 'src/contents/menu'
+import { menus, topMenu } from 'src/contents/menuContent'
 
 const Home: NextPage = () => {
   return (

@@ -6,7 +6,7 @@ import ImageBlind from "src/components/parts/ImageBlind"
 import TitleText from "src/components/parts/TItleText"
 import Layout from "src/components/templates/Layout"
 import MenuList from "src/components/templates/MenuList"
-import { menuContactLink, menuFV, menus, menuText } from "src/contents/menu"
+import { menuContactLink, menuFV, menus, menuText } from "src/contents/menuContent"
 
 
 const MenuPage = () => {
