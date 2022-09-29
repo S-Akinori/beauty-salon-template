@@ -13,11 +13,11 @@ import Layout from 'src/components/templates/Layout'
 import MenuList from 'src/components/templates/MenuList'
 import TopFV from 'src/components/templates/TopFV'
 import { accessItems, topAccess } from 'src/contents/access'
-import { menus, topMenu } from 'src/contents/menu'
 import { staffs, topStaff } from 'src/contents/staff'
 import { topConcepts } from 'src/contents/concept'
 import clsx from 'clsx'
 import { topGallery } from 'src/contents/gallery'
+import { menus, topMenu } from 'src/contents/menu'
 
 const Home: NextPage = () => {
   return (
