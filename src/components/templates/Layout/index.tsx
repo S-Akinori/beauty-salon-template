@@ -17,7 +17,7 @@ const Layout = ({
     pageTitle = process.env.NEXT_PUBLIC_SITE_NAME, 
     pageDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION,
     pagePath = process.env.NEXT_PUBLIC_HOME_URL, 
-    pageImg = 'https://impre.jp/images/agriculture-gf0d64886b_1920.jpg', 
+    pageImg = process.env.NEXT_PUBLIC_IMAGE, 
     h1,
     children
   }: Props) => {
